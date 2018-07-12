@@ -19,17 +19,34 @@ class Manager():#管理类
 
     def add(self,student):
         self.list.append(student)
-        for i in self.list:
-            print(i)
-
+        self.save()#保存数据
     def remove(self):
         pass
 
     def update(self):
         pass
 
-    def find(self):
+    def find(self,name):
+        '''
+
+        [{"name":"老王","sex":"男"}]
+        [ox3213,023123]
+        '''
+        for  student in self.list:
+            if student.name ==  name:
+                print("我的名字是%s 我的性别是%s"%(student.name,student.sex))
+    def save(self):#数据持久化
+        with open("data.bat","w") as f:
+            f.write(str(self.list))
+
+    def read(self):#读取数据
         pass
+
+    def print_student(self):
+        for student in self.list:
+            print("我的名字是%s\t我的性别是%s"%(student.name,student.sex))    
+
+    
 
 class Menu():#菜单类
     
@@ -45,15 +62,17 @@ class Menu():#菜单类
                 sex = input("请输入学生性别")
                 s = Student(name,sex)
                 self.m.add(s)# m = Manager()  m.add()
-    
+            elif fun == 2:
+                name = input("请输入你查找学生姓名")
+                self.m.find(name)
         
 #m = Manager()
 #name = input("请输入名字")
 #s = Student(name)
 #m.add(s)
 
-m = Menu()
-m.print_men()
+menu = Menu()
+menu.print_men()
 '''
 
 把输入写入文件
