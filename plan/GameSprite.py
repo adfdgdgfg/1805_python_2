@@ -1,4 +1,5 @@
 import pygame
+SCREEN_RECT = pygame.Rect(0,0,480,700)#常量
 class GameSprite(pygame.sprite.Sprite):#父类 大写
 
     def __init__(self,image,speed=1):
