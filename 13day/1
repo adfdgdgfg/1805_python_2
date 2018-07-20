@@ -1,0 +1,24 @@
+def w1(fun):
+    def inner():
+        print("验证吃鸡账号")
+        fun()
+    return inner
+
+
+def w2(fun):
+    def inner():
+        print("验证王者账号")
+        fun()
+    return inner
+
+
+@w1
+def play1():
+    print("我要玩吃鸡")
+
+@w2
+def play2():
+    print("我要玩王者")
+
+play1()
+play2()
