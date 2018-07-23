@@ -26,4 +26,6 @@ def play2():
     print("我要玩王者")
 
 play1()
+if __name__ == '__main__':
+    main()
 play2()
