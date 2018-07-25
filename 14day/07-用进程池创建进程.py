@@ -11,8 +11,8 @@ def work(msg):
 p = Pool(3)#创建最多能3个进程的池子
 
 for i in range(6):
-    p.apply_async(work,(i,))#非阻塞
-    #p.apply(work,(i,))#阻塞
+    #p.apply_async(work,(i,))#非阻塞
+    p.apply(work,(i,))#阻塞
     print("添加一个")
 
 
